@@ -1,0 +1,38 @@
+$breakpoints: (
+  tablet: 768px,
+  tablet-horizontal: 1024px,
+  desktop: 1200px,
+  layout-change: 768px
+);
+
+@mixin on($size) {
+  @if $size == mobile {
+    @media (max-width: map-get($breakpoints, layout-change) - 1px) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (min-width: map-get($breakpoints, layout-change)) {
+      @content;
+    }
+  }
+}
+
+@mixin from($bp) {
+  @media (min-width: map-get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+@mixin until($bp) {
+  @media (min-width: map-get($breakpoints, $bp) - 1px) {
+    @content;
+  }
+}
+
+@mixin between($from, $to) {
+  @include from($from) {
+    @include until($to) {
+      @content;
+    }
+  }
+}
