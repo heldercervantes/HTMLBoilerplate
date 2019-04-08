@@ -1,0 +1,28 @@
+$colors: (
+  black: (
+    base: #222222
+  ),
+  blue: (
+    base: #3355AA,
+    light: #99AAEE,
+    dark: #222266
+  ),
+  red: (
+    base: #990000
+  )
+);
+
+@function color($color, $variation: base) {
+  $colorSet: map-get($colors, $color);
+
+  @if type-of($colorSet) == color {
+    @return $colorSet;
+  }
+
+  @if map-has-key($colorSet, $variation) {
+    @return map-get($colorSet, $variation);
+  }
+
+  @warn "Unknown #{$variation} variation in #{$colorSet}.";
+  @return map-get($colorSet, base);
+}

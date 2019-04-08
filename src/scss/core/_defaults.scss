@@ -1,11 +1,11 @@
 body {
   @extend %size-text;
   font-family: $font-text;
-  color: $colour-black;
+  color: color(black);
 }
 
 a {
-  color: blue;
+  color: color(blue);
 }
 
 h1 {
