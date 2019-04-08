@@ -36,8 +36,8 @@ var paths = {
     },
 
     dist: {
-        css: './dist/site/css/',
-        js: './dist/site/js/',
+        css: './dist/css/',
+        js: './dist/js/',
         mirror: './dist/'
     }
 };
