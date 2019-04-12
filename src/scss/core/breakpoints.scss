@@ -6,11 +6,11 @@ $breakpoints: (
 );
 
 @mixin on($size) {
-  @if $size == mobile {
+  @if $size == small {
     @media (max-width: map-get($breakpoints, layout-change) - 1px) {
       @content;
     }
-  } @else if $size == desktop {
+  } @else if $size == large {
     @media (min-width: map-get($breakpoints, layout-change)) {
       @content;
     }

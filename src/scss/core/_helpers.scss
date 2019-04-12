@@ -1,17 +1,38 @@
-%helper-center {
+// Convert to unitless
+// I.e. give it a sample line-height in $pixels and a font-size in $context (also pixel based).
+// Returns a proportional value that will adjust to whatever font size proportionally
+@function unitless($pixels, $context) {
+  @return #{$pixels/$context};
+}
+
+// Convert to em
+// I.e. give it a sample letter spacing in $pixels and a font-size in $context (also pixel based).
+// Returns an EM value that will adjust to whatever font size proportionally
+@function em($pixels, $context) {
+  @return #{$pixels/$context}em;
+}
+
+// Expand a rule set (i.e. typeSets)
+@mixin expand($set) {
+  @each $prop, $value in $set {
+    #{$prop}: $value;
+  }
+}
+
+@mixin helper-center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-%helper-center-vertical {
+@mixin helper-center-vertical {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
 
-%helper-clearfix {
+@mixin helper-clearfix {
   &:after {
     content: '';
     display: table;

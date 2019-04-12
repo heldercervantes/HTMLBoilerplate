@@ -1,0 +1,150 @@
+$fonts: (
+  primary: (sans-serif),
+  secondary: (serif)
+);
+
+// Small is mandatory, then add `large` or specific breakpoints
+$sizes: (
+  base: (
+    small: 12px,
+    large: 14px
+  ),
+  large: (
+    small: 16px,
+    large: 18px
+  ),
+  title: (
+    small: 20px,
+    tablet: 30px,
+    tablet-horizontal: 40px,
+    desktop: 50px
+  )
+);
+
+$weights: (
+  regular: 400,
+  medium: 600,
+  bold: 700
+);
+
+// Unitless, so that it grows with font-size
+$lineHeights: (
+  base: 1.25,
+  tight: 0.9,
+  double: 1.5
+);
+
+// Set in EM, so that it grows with font-size
+$letterSpacings: (
+  base: 0,
+  tight: -0.2em,
+  wide: 0.2em
+);
+
+$typeSets: (
+  regular: (
+    font-family: font(primary),
+    weight: weight(regular),
+    lineHeight: lineHeight(base)
+  ),
+  title: (
+    font-family: font(secondary),
+    font-weight: weight(bold),
+    line-height: lineHeight(tight),
+    letter-spacing: letterSpacing(wide),
+    text-transform: uppercase,
+    font-style: italic
+  ),
+  feature: (
+    font-weight: weight(bold),
+    text-transform: uppercase,
+    font-style: italic
+  )
+);
+
+
+
+// Font tools
+@function font($font) {
+  @return map-get($fonts, $font);
+}
+
+@mixin useFont($font) {
+  font-family: font($font);
+}
+
+
+// Weight tools
+@function weight($weight) {
+  @return map-get($weights, $weight);
+}
+
+@mixin useWeight($weight) {
+  font-weight: weight($weight);
+}
+
+
+// Line height tools
+@function lineHeight($lineHeight) {
+  @return map-get($lineHeights, $lineHeight);
+}
+
+@mixin useLineHeight($lineHeight) {
+  line-height: lineHeight($lineHeight);
+}
+
+
+// Letter spacing tools
+@function letterSpacing($letterSpacing) {
+  @return map-get($letterSpacings, $letterSpacing);
+}
+
+@mixin useLetterSpacing($letterSpacing) {
+  line-height: letterSpacing($letterSpacing);
+}
+
+
+// Size tools
+@function size($set, $breakpoint) {
+  $sizeSet: map-get($sizes, $set);
+  @return map-get($sizeSet, $breakpoint);
+}
+
+@mixin useSize($size) {
+  $set: map-get($sizes, $size);
+  
+  @each $breakpoint, $size in $set {
+    @if $breakpoint == 'small' {
+      font-size: map-get($set, 'small');
+    }
+    
+    @else if $breakpoint == 'large' {
+      @include on(large) {
+        font-size: $size;
+      }
+    }
+    
+    @else {
+      @include from($breakpoint) {
+        font-size: $size;
+      }
+    }
+  }
+}
+
+// Selective size function
+// Fetches the value from a specific set+breakpoint combo
+@function size($size, $breakpoint) {
+  $set: map-get($sizes, $size);
+  @return map-get($set, $breakpoint);
+}
+
+
+// Typography sets
+@mixin useType($type, $size:false) {
+  @include expand(map-get($typeSets, $type));
+  
+  @if $size {
+    @include useSize($size);
+  }
+}
