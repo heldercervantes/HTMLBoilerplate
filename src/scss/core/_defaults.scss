@@ -1,6 +1,6 @@
 body {
-  font-family: font(primary);
-  font-size: size(base);
+  @include useFont(primary);
+  @include useSize(base);
   color: color(black);
 }
 

@@ -1,15 +1,11 @@
 @import
+'core/reset',
+'core/fonts',
 'core/breakpoints',
 'core/colors',
 'core/spacing',
 'core/typography',
+'core/defaults',
+'core/helpers';
 
-'core/fonts',
-'core/reset',
-'core/variables',
-'core/helpers',
-'core/defaults';
-/*
-@import
-'blocks/button';
-*/
+// Add modules/components imports here
