@@ -1,0 +1,16 @@
+$spacing-unit: 4px;
+
+$spacings: (
+  base: 5,
+  wide: 10,
+  xwide: 25
+);
+
+@function spacing($space) {
+  @if type-of($space) == number {
+    @return $spacing-unit * $number;
+  }
+  @else {
+    @return map-get($spacings, $space);
+  }
+}
