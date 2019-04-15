@@ -1,14 +1,14 @@
 # Colors
 Global colors defined in the `$colors` map. Each color supports a `base` which is mandatory, and any number of variants for lighter, darker, etc.
 
-# Usage
+## Usage
 
 ```
-    color: color(blue); // Returns base
-    color: color(blue, light); // Returns light variant
+color: color(blue); // Returns base
+color: color(blue, light); // Returns light variant
 ```
 
-Default values
+Sample values
 
 ```
 $colors: (

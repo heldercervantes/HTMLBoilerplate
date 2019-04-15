@@ -6,11 +6,11 @@ The same `spacing(...)` function accepts either a number which is interpreted as
 # Usage
 
 ```
-    padding: 0 spacing(5); // 20px
-    padding: 0 spacing(wide): // 40px
+padding: 0 spacing(5); // 20px
+padding: 0 spacing(wide): // 40px
 ```
 
-Default values
+Sample values
 
 ```
 $spacing-unit: 4px;

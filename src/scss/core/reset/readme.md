@@ -1,2 +1,2 @@
 # Reset
-Base document reset.
+Base document reset. Doesn't require changing.

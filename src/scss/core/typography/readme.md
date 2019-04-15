@@ -17,6 +17,7 @@ $fonts: (
 font-family: font(secondary);
 ```
 
+
 ## Sizes
 Reusable size rules are stored in the `$sizes` list. Each size needs a mandatory `small` size which is used as a global value. In addition, it can have a `large` size that is tied to the layout-change breakpoint, or other values for specific breakpoints, always in a mobile-first approach.
 
@@ -40,6 +41,7 @@ $sizes: (
 font-size: size(title, large) // Returns a specific set+breakpoint value
 ```
 
+
 ## Weights
 Define your default weights in a `$weights` list.
 
@@ -56,6 +58,7 @@ $weights: (
 @include useWeight(bold);
 font-weight: weight(bold);
 ```
+
 
 ## Line heights
 Define your default heights in a `$lineHeights` list.
@@ -76,6 +79,7 @@ $lineHeights: (
 line-height: lineHeight(bold);
 ```
 
+
 ## Letter spacings
 Define your default spacings in a `$letterSpacings` list.
 
@@ -95,10 +99,11 @@ $letterSpacings: (
 letter-spacing: letterSpacing(wide);
 ```
 
+
 ## Typography sets
 Default, reusable typography sets are stored in a `$typeSets` list.
 
-These sets should be independent of size. If i.e. <h1> and <h2> look the same but only differ in size, they should use the same typeset combined with different size rules.
+These sets should be independent of size. If i.e. `<h1>` and `<h2>` look the same but only differ in size, they should use the same typeset combined with different size rules.
 
 Components that use very specific rules that are not going to be reused elsewhere are encouraged to avoid saturating this list.
 
