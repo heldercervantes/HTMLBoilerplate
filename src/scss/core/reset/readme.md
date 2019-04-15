@@ -1,0 +1,2 @@
+# Reset
+Base document reset.
