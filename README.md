@@ -55,9 +55,9 @@ In `src/js` you can add as many JS files as you like. I tend to create one per f
 Two things happen to vendor scripts. They are combined into the main.js file AND the `vendor` directory is also duplicated into your template folder. This causes some redundancy, but it leaves the door open for you to load them separately from your main.js file should you need to. Also some scripts include assets (css, images) that are mirrored into your `dist` folder.
 
 Included vendor scripts:
-- **jQuery 2.2.0**: For who can live without it;
-- **Modernizr**: Basic, only touchevents detection so you can make hover's that dont require double tapping on touch devices;
-- **Swiper 3.4.2**: Just because this ends up in 90% of my projects.
+- **jQuery 2.2.0**: For those who can't live without it;
+- **Modernizr**: Basic, only touchevents detection so you can make hovers that don't require double tapping on touch devices;
+- **Swiper 3.4.2**: Just because 90% of projects have some sort of slideshow feature.
 
 Don't need any of these? Just delete the files.
 
