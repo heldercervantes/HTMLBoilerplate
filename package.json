@@ -6,21 +6,20 @@
   "private": true,
   "main": "gulpfile.js",
   "devDependencies": {
-    "clean-css": "^3.4.19",
+    "clean-css": "^4.2.1",
     "flatten-object": "^1.2.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-clean-css": "^2.0.12",
-    "gulp-concat": "^2.6.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
     "gulp-install": "^1.1.0",
-    "gulp-jshint": "^2.0.1",
-    "gulp-sass": "^2.0.4",
-    "gulp-uglify": "^2.0.0",
-    "gulp-watch": "^4.3.11",
-    "jshint": "^2.9.2"
+    "gulp-jshint": "^2.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1",
+    "jshint": "^2.10.2"
   },
   "dependencies": {
-    "gulp-install": "^1.1.0",
-    "picturefill": "^3.0.2"
+    "picturefill": "^3.0.3"
   }
 }

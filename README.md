@@ -4,6 +4,10 @@ This is a basic boilerplate for HTML.
 It features version control, SCSS compiling, javascript combining, and asset mirroring for images, vendor scripts, etc.
 
 
+# Requirements
+
+npm v10.16.1
+
 
 # Getting started
 
